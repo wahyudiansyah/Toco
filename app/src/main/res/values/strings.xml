@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Toco</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="kategories">kategories</string>
+    <string name="title_activity_kategories">Kategories</string>
+    <string name="add_kategories">new folder</string>
+    <string name="add_file">new file</string>
+    <string name="title_activity_kategoriesdetail">kategoriesdetail</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+</resources>
