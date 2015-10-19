@@ -35,6 +35,7 @@ public class Shop extends AppCompatActivity {
     private String userRole;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
+    private int Position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +92,15 @@ public class Shop extends AppCompatActivity {
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("position",""+position);
+                Log.d("selected",""+Position);
+                if (position==Position){
+                    mDrawerLayout.closeDrawer(mDrawerList);
+                    return;
+                }
                 //Toast.makeText(Shop.this, mDrawerList.getAdapter().getItem(position).getClass().toString(), Toast.LENGTH_SHORT).show();
                 String m = String.valueOf(mDrawerList.getItemAtPosition(position));
-                Toast.makeText(Shop.this, mDrawerList.getAdapter().getItem(position).toString(), Toast.LENGTH_SHORT).show();
+
                 switch (m){
                     case "logout":
                         try {
@@ -123,11 +130,17 @@ public class Shop extends AppCompatActivity {
                         fragmentManager.setTransition(fragmentManager.TRANSIT_FRAGMENT_FADE);
                         fragmentManager.commit();
 
+                        Toast.makeText(getApplicationContext(),m,Toast.LENGTH_LONG).show();
+
                         // update selected item and title, then close the drawer
+                        break;
+                    case "shop":
+                        Toast.makeText(getApplicationContext(),m,Toast.LENGTH_LONG).show();
                         break;
 
                 }
-                mDrawerList.setItemChecked(position, true);
+                //mDrawerList.setItemChecked(position, true);
+                Position = position;
                 setTitle(m);
                 mDrawerLayout.closeDrawer(mDrawerList);
 

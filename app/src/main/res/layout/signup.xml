@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b99be3">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/header"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Toco"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#9fd89e"
+                android:textSize="50sp"
+                android:textIsSelectable="false" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/nama"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edittext_top_bg"
+                android:hint="nama"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:clickable="false" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/username"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edittext_default_bg"
+                android:hint="username"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:digits="abcdefghijklmnopqrstuvwxyz1234567890"
+                android:singleLine="true"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/password"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/edittext_bottom_bg"
+                android:hint="password"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:password="true"
+                android:digits="abcdefghijklmnopqrstuvwxyz1234567890"/>
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
+            <Button
+                android:layout_width="204dp"
+                android:layout_height="wrap_content"
+                android:text="Signup"
+                android:id="@+id/button_signup"
+                android:layout_gravity="center_horizontal"
+                android:background="#72579d" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
