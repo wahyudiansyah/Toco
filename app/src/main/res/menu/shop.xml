@@ -7,6 +7,5 @@
     <item
         android:id="@+id/kategories"
         android:title="@string/kategories"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 </menu>

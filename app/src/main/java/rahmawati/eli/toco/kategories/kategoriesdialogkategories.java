@@ -16,7 +16,7 @@ import rahmawati.eli.toco.kategories.database.Folder;
 import rahmawati.eli.toco.kategories.database.FolderDataSource;
 public class kategoriesdialogkategories extends DialogFragment {
     Folder folder;
-    FolderDataSource dataSource = new FolderDataSource(this.getContext());
+    FolderDataSource dataSource = new FolderDataSource(this.getActivity().getBaseContext());
     final EditText input = new EditText(this.getActivity());
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

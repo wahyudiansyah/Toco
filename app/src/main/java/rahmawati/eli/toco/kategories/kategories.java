@@ -37,8 +37,9 @@ public class kategories extends AppCompatActivity {
         setContentView(R.layout.kategories);
         ListView listView = (ListView)findViewById(R.id.listView);
         List<Item>dir = new ArrayList<Item>();
-        Item item = new Item("dir","nama",30,"20-09-2015");
-        dir.add(item);
+        Item item = new Item("dir","nama",30,"Rp 7.500","20-09-2015");
+        for (int n=0;n<100;n++){
+        dir.add(item);}
         FileArrayAdapter adapter = new FileArrayAdapter(this,R.layout.fileview,dir);
         listView.setAdapter(adapter);
 

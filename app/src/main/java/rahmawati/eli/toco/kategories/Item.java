@@ -10,12 +10,14 @@ public class Item {
     private String createdate;
     private String editdate;
     private String img;
+    private String harga;
 
-    public Item(String img,String folder, Integer child, String editdate) {
+    public Item(String img,String folder, Integer child,String harga,String editdate) {
         this.folder = folder;
         this.img = img;
         this.child = child;
         this.editdate = editdate;
+        this.harga = harga;
     }
 
     public String getFolder() {
@@ -48,6 +50,10 @@ public class Item {
 
     public void setCreatedate(String createdate) {
         this.createdate = createdate;
+    }
+
+    public String getHarga() {
+        return harga;
     }
 
     public String getEditdate() {
