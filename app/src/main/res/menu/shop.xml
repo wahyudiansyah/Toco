@@ -1,11 +1,12 @@
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".shop">
-
+    tools:context=".shop">>
     <item
-        android:id="@+id/kategories"
-        android:title="@string/kategories"
-        app:showAsAction="never"/>
+        android:id="@+id/clear"
+        android:title="@string/clear"
+        app:showAsAction="never"
+        />
+
 </menu>

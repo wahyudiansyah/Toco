@@ -32,4 +32,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="tambah_user">tambah user</string>
+    <string name="tambah_barang">tambah barang</string>
+    <string name="clear">clear</string>
 </resources>

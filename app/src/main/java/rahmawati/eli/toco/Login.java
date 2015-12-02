@@ -6,6 +6,7 @@ package rahmawati.eli.toco;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -56,13 +57,18 @@ public class Login extends Activity {
         Username = username.getText().toString();
         Password = password.getText().toString();
         try {
-            SQLiteDatabase database = openOrCreateDatabase("Toco.db",MODE_PRIVATE,null);
+            SQLiteDatabase database = openOrCreateDatabase("Toco.db", MODE_PRIVATE, null);
             //database.execSQL("update User set login=1 where username='eli' and password='rahmawati'");
             database.execSQL("update User set login=1 where username='" +
                     Username +
                     "' and password='" +
                     Password +
                     "'");
+            Cursor cursor = database.rawQuery("select _id from User where login=1",null);
+            cursor.moveToFirst();
+            int _iD = cursor.getInt(0);
+            Log.d("_iD",""+_iD);
+            cursor.close();
             database.close();
         }
         catch (Exception e){

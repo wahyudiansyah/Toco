@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
                 cursor = database.rawQuery("select * from User where login='1'",null);
                 if (cursor.moveToFirst()){
                     Log.d("MainActivity","sudah ada login") ;
-                    Intent intent = new Intent(this,Shop.class);
+                    Intent intent = new Intent(this,Toco.class);
                     startActivity(intent);
                     cursor.close();
                     database.close();
@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
             Log.d("MainActivity","belum ada login") ;
 
             //Log.d("cursor",cursor.getString(0));
-            Intent intent = new Intent(this,Login.class);
+            Intent intent = new Intent(this,Signup.class);
             startActivity(intent);
             cursor.close();
                 database.close();
