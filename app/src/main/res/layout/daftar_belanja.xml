@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:id="@+id/qty"
+            android:background="#fe8849"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:textAlignment="center"
+            android:gravity="center_vertical|center_horizontal"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:maxLength="2"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:text="nama"
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="20dip"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="harga"
+            android:id="@+id/harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:minHeight="25dp"
+            android:layout_below="@+id/nama"
+            android:layout_alignLeft="@+id/nama"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:text="subtotal"
+            android:id="@+id/subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="25dp"
+            android:layout_alignTop="@+id/harga"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/trash"
+        android:background="@android:drawable/ic_menu_delete"
+        android:layout_gravity="center_vertical" />
+
+</LinearLayout>

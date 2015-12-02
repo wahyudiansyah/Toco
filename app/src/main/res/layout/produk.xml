@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingTop="5dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp">
+
+
+    <TextView
+        android:text="nama"
+        android:id="@+id/nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:minHeight="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:textStyle="bold"
+        android:textSize="18dip"
+        android:textColor="#000000">
+
+
+    </TextView>
+    <TextView
+        android:text="etalase"
+        android:id="@+id/etalase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="25dp"
+        android:layout_above="@+id/gudang"
+        android:layout_alignParentRight="true"
+        android:textColor="#000000">
+
+    </TextView>
+    <TextView
+        android:text="harga"
+        android:id="@+id/harga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:minHeight="25dp"
+        android:layout_below="@+id/nama"
+        android:layout_alignLeft="@+id/nama"
+        android:textColor="#000000">
+
+    </TextView>
+    <TextView
+        android:text="gudang"
+        android:id="@+id/gudang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="25dp"
+        android:layout_alignTop="@+id/harga"
+        android:layout_alignRight="@+id/etalase"
+        android:textColor="#000000">
+
+    </TextView>
+</RelativeLayout>

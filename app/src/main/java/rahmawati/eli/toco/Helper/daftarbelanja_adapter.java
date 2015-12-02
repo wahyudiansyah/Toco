@@ -5,6 +5,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -52,7 +54,7 @@ public  class  daftarbelanja_adapter extends SimpleCursorAdapter {
                 qty.setSelection(0, qty.getText().length());
             }
         });*/
-        qty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        /*qty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
@@ -61,7 +63,25 @@ public  class  daftarbelanja_adapter extends SimpleCursorAdapter {
                     Context.getContentResolver().update(Uri.parse("content://rahmawati.eli.toco/Transaksi/" + _id), values, null, null);
                 }
             }
-        });
+        });*/
+        /*qty.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                ContentValues values = new ContentValues();
+                values.put(Transaksi.COLUMN_QTY, s.toString());
+                Context.getContentResolver().update(Uri.parse("content://rahmawati.eli.toco/Transaksi/" + _id), values, null, null);
+            }
+        });*/
         qty.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
