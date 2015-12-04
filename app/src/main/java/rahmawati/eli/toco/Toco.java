@@ -24,7 +24,7 @@ import rahmawati.eli.toco.Fragment.Shop;
 
 public class Toco extends AppCompatActivity {
     private String[] menu = {"shop","logout"};
-    private String[] menuAdmin = {"shop","barang","admin","logout"};
+    private String[] menuAdmin = {"shop","laporan","barang","admin","logout"};
     private ActionBarDrawerToggle mDrawerToggle;
     private String user;
     private String userRole;
@@ -138,6 +138,14 @@ public class Toco extends AppCompatActivity {
                         fragmentManager.setTransition(fragmentManager.TRANSIT_FRAGMENT_FADE);
                         fragmentManager.commit();
 
+                        break;
+                    case "laporan":
+                        fragment = new rahmawati.eli.toco.Fragment.Laporan();
+                        fragmentManager = getFragmentManager().beginTransaction();
+                        fragmentManager.replace(R.id.content_frame, fragment);
+                        fragmentManager.addToBackStack(null);
+                        fragmentManager.setTransition(fragmentManager.TRANSIT_FRAGMENT_FADE);
+                        fragmentManager.commit();
                         break;
 
                 }
