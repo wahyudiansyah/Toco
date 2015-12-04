@@ -146,7 +146,6 @@ public class add_barang extends AppCompatActivity {
                 }
                 if (uri==null){
                     try {
-                        Log.d("insert","insert");
                         getContentResolver().insert(Uri.parse("content://rahmawati.eli.toco/Barang"), values);
                         this.setResult(RESULT_OK);
                         finish();
