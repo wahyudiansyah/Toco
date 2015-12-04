@@ -20,6 +20,9 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import rahmawati.eli.toco.Database.Transaksi;
 import rahmawati.eli.toco.R;
 
@@ -48,58 +51,27 @@ public  class  daftarbelanja_adapter extends SimpleCursorAdapter {
         final Integer _id = cursor.getInt(cursor.getColumnIndex("_id"));
         final EditText qty = (EditText)view.findViewById(R.id.qty);
         qty.setText(cursor.getString(cursor.getColumnIndex(Transaksi.COLUMN_QTY)));
-        /*qty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                qty.setSelection(0, qty.getText().length());
-            }
-        });*/
-        /*qty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    ContentValues values = new ContentValues();
-                    values.put(Transaksi.COLUMN_QTY, qty.getText().toString());
-                    Context.getContentResolver().update(Uri.parse("content://rahmawati.eli.toco/Transaksi/" + _id), values, null, null);
-                }
-            }
-        });*/
-        /*qty.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                ContentValues values = new ContentValues();
-                values.put(Transaksi.COLUMN_QTY, s.toString());
-                Context.getContentResolver().update(Uri.parse("content://rahmawati.eli.toco/Transaksi/" + _id), values, null, null);
-            }
-        });*/
         qty.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId== EditorInfo.IME_ACTION_DONE){
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    ContentValues values = new ContentValues();
+                    values.put(Transaksi.COLUMN_QTY, qty.getText().toString());
+                    Context.getContentResolver().update(Uri.parse("content://rahmawati.eli.toco/Transaksi/" + _id), values, null, null);
                     qty.clearFocus();
-                    hideKeyboard(v);
+                    //hideKeyboard(v);
                 }
                 return false;
             }
         });
         TextView nama = (TextView)view.findViewById(R.id.nama);
         nama.setText(cursor.getString(cursor.getColumnIndex("nama")));
-        TextView haga = (TextView)view.findViewById(R.id.harga);
-        haga.setText(cursor.getString(cursor.getColumnIndex(Transaksi.COLUMN_HARGA_JUAL)));
+        TextView harga = (TextView)view.findViewById(R.id.harga);
+        harga.setText(NumberFormat.getCurrencyInstance(Locale.getDefault()).format(cursor.getInt(cursor.getColumnIndex(Transaksi.COLUMN_HARGA_JUAL))));
         TextView subtotal = (TextView)view.findViewById(R.id.subtotal);
-        subtotal.setText(cursor.getString(cursor.getColumnIndex(Transaksi.COLUMN_SUB_JUAL)));
+        subtotal.setText(NumberFormat.getCurrencyInstance(Locale.getDefault()).format(cursor.getInt(cursor.getColumnIndex(Transaksi.COLUMN_SUB_JUAL))));
         ImageButton trash = (ImageButton)view.findViewById(R.id.trash);
-
         trash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
